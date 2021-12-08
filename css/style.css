@@ -7,11 +7,8 @@
 
 html {
 	font-family: Raleway;
-	background: url("https://www.wallpapertip.com/wmimgs/66-666819_website-design-background-creative-background-image-for-website.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: gray;
 }
-
 a {
 	text-decoration: none;
 	color: lightgray;
