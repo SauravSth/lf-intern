@@ -6,8 +6,8 @@
 }
 
 html {
-	font-family: Raleway;
-	background: gray;
+	font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
+	background-color: gray;
 }
 a {
 	text-decoration: none;
