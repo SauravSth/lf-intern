@@ -7,8 +7,11 @@
 
 html {
 	font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
-	background-color: gray;
+	background: url("https://t3.ftcdn.net/jpg/02/94/99/24/360_F_294992494_kPG2PgIe6Jn9sU4OcSw6Th6SvZD4OfWy.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 215%;
 }
+
 a {
 	text-decoration: none;
 	color: lightgray;
@@ -16,8 +19,8 @@ a {
 
 a:hover {
 	cursor: pointer;
-	color: white;
-	transition-duration: 200ms;
+	color: rgb(133, 109, 109);
+	transition-duration: 500ms;
 }
 
 h1,
@@ -45,16 +48,15 @@ table {
 	border: 1px solid whitesmoke;
 }
 
-tr:first-of-type {
-	border-bottom: 1px solid red;
-}
-
 th {
 	padding-right: 100px;
 	font-size: 20px;
 }
 
+table th:last-child {
+	padding-right: 0;
+}
+
 td {
-	/* border: 1px solid whitesmoke; */
-	padding: 10px 10px 10px 10px;
+	padding: 10px;
 }
