@@ -102,7 +102,7 @@ nav {
 .nav-right ul li {
 	display: inline;
 }
-.nav-right li:nth-child(2) {
+.nav-right li {
 	margin-left: 20px;
 }
 /* Main container CSS */
@@ -167,26 +167,24 @@ main {
 }
 .main-header {
 	border-bottom: 2px solid #2ec0d9;
-	height: 76px;
+	height: 70px;
 }
-.all-entries,
-.subscribed {
-	background-color: #f5f5f5;
-}
+
 .all-entries {
 	float: left;
-	padding: 13px 99px 43px 99px;
-	margin-right: 1px;
+	padding: 13px 99px 49px 99px;
+	margin-right: 0px;
 	position: relative;
 	overflow: hidden;
 	font-weight: bold;
 	background-image: url(../images/slice1.png);
 	background-repeat: no-repeat;
+	background-size: contain;
 }
 .subscribed {
 	float: right;
 	padding: 13px 99px 43px 99px;
-	margin-left: 1px;
+	margin-left: 0px;
 	overflow: hidden;
 	position: relative;
 	font-weight: bold;
@@ -221,7 +219,7 @@ main {
 }
 .all-members {
 	position: absolute;
-	bottom: 0px;
+	bottom: 12px;
 	left: 30px;
 }
 .all-members:hover,
@@ -232,17 +230,17 @@ main {
 }
 .friends {
 	position: absolute;
-	bottom: 0px;
+	bottom: 12px;
 	right: 30px;
 }
 .new-entries {
 	position: absolute;
-	bottom: 0px;
+	bottom: 6px;
 	left: 30px;
 }
 .new-comments {
 	position: absolute;
-	bottom: 0px;
+	bottom: 6px;
 	right: 30px;
 }
 .user-info {
@@ -288,10 +286,10 @@ main {
 	margin-top: 10px;
 	margin-right: 20px;
 }
-.right-sidebar dd:last-child {
+.right-sidebar-final {
 	height: 295px;
 }
-.left-sidebar dd:last-child {
+.left-sidebar-final {
 	height: 262px;
 }
 .right-sidebar dt {
