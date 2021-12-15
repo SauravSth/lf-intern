@@ -21,7 +21,7 @@
 	.friends,
 	.new-entries,
 	.new-comments {
-		width: 30%;
+		width: 35%;
 	}
 	.right-sidebar {
 		margin-left: 50px;
@@ -30,6 +30,7 @@
 @media only screen and (min-width: 768px) {
 	.left-sidebar {
 		width: 40%;
+		display: block;
 	}
 	.right-sidebar {
 		width: 40%;
@@ -43,7 +44,6 @@
 	.subscribed {
 		width: 20%;
 		text-align: center;
-		background-color: #f5f5f5;
 	}
 	.all-members,
 	.friends,
@@ -53,6 +53,10 @@
 	}
 }
 @media only screen and (min-width: 1002px) {
+	.center {
+		margin: auto;
+		width: 1002px;
+	}
 	.hero {
 		margin: auto;
 	}
@@ -60,13 +64,21 @@
 		float: left;
 		width: 60%;
 	}
-
+	header,
+	nav,
+	footer {
+		/* border: 1px solid red; */
+	}
 	.header-left img {
 		width: 20%;
+		background-repeat: no-repeat;
 	}
 	.header-left input {
-		max-width: 32%;
+		width: 46%;
 		float: left;
+		margin-left: 40px;
+		/* border: 1px solid red; */
+		background-repeat: no-repeat;
 	}
 	.header-name {
 		font-size: 14px;
@@ -76,6 +88,7 @@
 	}
 	.right-sidebar {
 		position: unset;
+		margin-right: 20px;
 	}
 	.nav-left a {
 		font-size: 12px;
@@ -89,26 +102,52 @@
 		width: 20%;
 		margin-left: 20px;
 		margin-right: 20px;
+		height: 620px;
+		background-color: #f5f5f5;
+		margin-top: 20px;
+		display: block;
 	}
 	.right-sidebar {
-		margin-left: 5px;
+		margin-left: 0px;
 		width: 20%;
+		height: 620px;
+		margin-top: 20px;
+		background-color: #f5f5f5;
+		/* height: 700px; */
+	}
+	dl {
+		padding: 0;
+		margin: 0;
 	}
 	main {
 		margin-top: 20px;
 		margin-left: 20px;
-		width: 45%;
+		width: 48%;
 	}
 	.main-header {
-		height: 72px;
+		height: 65px;
 	}
 	.all-entries,
 	.subscribed {
-		width: 15%;
+		width: 16%;
 		text-align: center;
 		padding: 13px 80px 40px 80px;
 		margin: 0;
-		font-size: 15px;
+		font-size: 13px;
+		display: inline;
+	}
+	.all-entries {
+		background-image: url(../images/slice1.png);
+		background-repeat: no-repeat;
+		background-size: 18em 5em;
+	}
+	.subscribed {
+		background-image: url(../images/slice2.png);
+		background-repeat: no-repeat;
+		background-size: 18em 5em;
+		/* height: auto;
+		width: 0%; */
+		/* border: 1px solid red; */
 	}
 	.all-members,
 	.friends,
@@ -116,15 +155,10 @@
 	.new-comments {
 		width: 35%;
 		position: absolute;
-		bottom: 0;
+		bottom: 1;
+		height: 20px;
 	}
 	.user-details {
 		width: 80%;
-	}
-	.left-sidebar-final {
-		height: 255px;
-	}
-	.right-sidebar-final {
-		height: 300px;
 	}
 }
