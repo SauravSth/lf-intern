@@ -37,7 +37,7 @@
 		float: right;
 		margin-right: 50px;
 		position: absolute;
-		top: 17%;
+		top: 18%;
 		right: 3%;
 	}
 	.all-entries,
@@ -53,9 +53,18 @@
 	}
 }
 @media only screen and (min-width: 1002px) {
+	body {
+		width: 100vw;
+	}
 	.center {
 		margin: auto;
-		width: 1002px;
+		/* width: 100vw; */
+		height: 70px;
+		background-color: #7dd9e8;
+	}
+	.header-background,
+	.nav-background {
+		width: 1000px;
 	}
 	.hero {
 		margin: auto;
@@ -63,11 +72,6 @@
 	.header-left {
 		float: left;
 		width: 60%;
-	}
-	header,
-	nav,
-	footer {
-		/* border: 1px solid red; */
 	}
 	.header-left img {
 		width: 20%;
