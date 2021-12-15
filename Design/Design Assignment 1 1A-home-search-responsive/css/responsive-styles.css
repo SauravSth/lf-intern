@@ -1,0 +1,129 @@
+@media only screen and (min-width: 600px) {
+	.header-right {
+		display: block;
+	}
+	.header-name,
+	.header-right a {
+		font-size: 10px;
+	}
+	.left-sidebar {
+		margin-left: 50px;
+	}
+	.subscribed {
+		float: right;
+		margin-right: 60px;
+	}
+	.all-entries,
+	.subscribed {
+		padding: 10px 80px 48px 80px;
+	}
+	.all-members,
+	.friends,
+	.new-entries,
+	.new-comments {
+		width: 30%;
+	}
+	.right-sidebar {
+		margin-left: 50px;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.left-sidebar {
+		width: 40%;
+	}
+	.right-sidebar {
+		width: 40%;
+		float: right;
+		margin-right: 50px;
+		position: absolute;
+		top: 17%;
+		right: 3%;
+	}
+	.all-entries,
+	.subscribed {
+		width: 20%;
+		text-align: center;
+		background-color: #f5f5f5;
+	}
+	.all-members,
+	.friends,
+	.new-entries,
+	.new-comments {
+		width: 40%;
+	}
+}
+@media only screen and (min-width: 1002px) {
+	.hero {
+		margin: auto;
+	}
+	.header-left {
+		float: left;
+		width: 60%;
+	}
+	.header-left img {
+		width: 25%;
+	}
+	.header-left input {
+		max-width: 32%;
+		float: left;
+	}
+	.header-name {
+		font-size: 14px;
+	}
+	.header-right a {
+		font-size: 12px;
+	}
+	.right-sidebar {
+		position: unset;
+	}
+	.nav-left a {
+		font-size: 12px;
+	}
+	.nav-left,
+	.nav-right {
+		margin-top: 20px;
+		/* border: 1px solid red; */
+	}
+	.left-sidebar {
+		width: 20%;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.right-sidebar {
+		margin-left: 5px;
+		width: 20%;
+	}
+	main {
+		margin-top: 20px;
+		margin-left: 20px;
+		width: 45%;
+	}
+	.main-header {
+		height: 72px;
+	}
+	.all-entries,
+	.subscribed {
+		width: 15%;
+		text-align: center;
+		padding: 13px 80px 40px 80px;
+		margin: 0;
+		font-size: 15px;
+	}
+	.all-members,
+	.friends,
+	.new-entries,
+	.new-comments {
+		width: 35%;
+		position: absolute;
+		bottom: 0;
+	}
+	.user-details {
+		width: 80%;
+	}
+	.left-sidebar-final {
+		height: 255px;
+	}
+	.right-sidebar-final {
+		height: 300px;
+	}
+}
