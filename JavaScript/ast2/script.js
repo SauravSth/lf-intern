@@ -181,13 +181,13 @@ class ImageSlider {
 
 let imageSlider1 = new ImageSlider(
 	document.querySelectorAll('.carousel-container')[0],
-	500,
-	1000
+	1000,
+	2000
 )
 
 let imageSlider2 = new ImageSlider(
 	document.querySelectorAll('.carousel-container')[1],
-	1000,
+	4000,
 	2000
 )
 let imageSlider3 = new ImageSlider(
