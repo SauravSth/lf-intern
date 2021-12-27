@@ -17,6 +17,7 @@ let index = 0
 let prevIndex = -1
 let shifting = 0
 
+// Function for changing to next image
 function nextImage() {
 	prevIndex = index
 	index++
@@ -42,6 +43,7 @@ function nextImage() {
 	}, 5)
 }
 
+// Function for changing to previous image
 function previousImage() {
 	prevIndex = index
 	index--
@@ -67,10 +69,12 @@ function previousImage() {
 	}, 5)
 }
 
+// Creating leftArrow element
 const leftArrow = document.createElement('button')
 leftArrow.setAttribute('class', 'left-arrow')
 carouselContainer.appendChild(leftArrow)
 
+// Creating rightArrow element
 const rightArrow = document.createElement('button')
 rightArrow.setAttribute('class', 'right-arrow')
 carouselContainer.appendChild(rightArrow)
