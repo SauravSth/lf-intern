@@ -1,0 +1,275 @@
+/* Header CSS */
+
+header {
+	background-color: #f9f1e7;
+}
+nav {
+	padding: 20px;
+	/* border: 1px solid red; */
+	width: 90%;
+	background-color: #f9f1e7;
+}
+.nav-menu ul li {
+	display: inline;
+}
+.nav-left {
+	margin-top: 10px;
+}
+.menu-dropdown {
+	margin-left: 20px;
+}
+.header-carousel {
+	background-color: #fcf8f3;
+	/* border: 1px solid red; */
+	padding: 20px;
+	margin: auto;
+	position: relative;
+}
+.header-carousel-image {
+	margin-left: 6%;
+	/* border: 1px solid red; */
+	width: 80%;
+}
+.carousel-left-arrow,
+.carousel-right-arrow {
+	background-color: white;
+	border-radius: 50%;
+}
+.carousel-right-arrow img,
+.carousel-left-arrow img {
+	width: 20px;
+}
+.carousel-price {
+	position: absolute;
+	background-color: aliceblue;
+	width: 70%;
+	opacity: 80%;
+	bottom: 22px;
+	left: 15%;
+	padding: 5px;
+}
+.price-heading,
+.price-amount {
+	font-weight: 800;
+}
+.header-articles-row-1,
+.header-articles-row-2 {
+	background-color: white;
+	width: 100%;
+	margin: auto;
+}
+.article-1,
+.article-2 {
+	padding: 10px;
+	width: 40%;
+	/* border: 1px solid red; */
+}
+.article-1 {
+	margin-left: 15px;
+}
+.article-2 {
+	margin-right: 15px;
+}
+.article-img img {
+	width: 20px;
+}
+.article-section,
+.article-description {
+	display: block;
+	font-size: 0.5rem;
+	margin-left: 5px;
+}
+.article-section {
+	font-weight: 800;
+	font-size: 0.8rem;
+}
+.search-icon img {
+	background-color: white;
+	padding: 2px;
+	width: 20px;
+}
+.search-bar input {
+	border: none;
+	width: 70%;
+	padding: 5px;
+	font-size: 0.6rem;
+}
+/* Main CSS */
+
+main {
+	margin-top: 30px;
+}
+.section-title {
+	text-align: center;
+	font-size: 1.3rem;
+	font-weight: 900;
+	margin-bottom: 10px;
+}
+.our-products-row-1,
+.our-products-row-2 {
+	width: 100%;
+	margin: auto;
+}
+.our-products-row-2 {
+	margin-top: 20px;
+}
+.product-1 {
+	margin-left: 20px;
+	position: relative;
+	/* border: 1px solid red; */
+	width: 40%;
+}
+.product-2 {
+	margin-right: 30px;
+	position: relative;
+	width: 40%;
+}
+.product-img img {
+	width: 100%;
+}
+.product-details {
+	background-color: #f4f5f7;
+	width: 89%;
+	padding: 9px;
+	height: 30%;
+	line-height: 1.4rem;
+}
+.product-name {
+	font-size: 0.9rem;
+	font-weight: 800;
+}
+.product-desc {
+	font-size: 0.6rem;
+}
+.product-price {
+	font-weight: 800;
+	font-size: 0.7rem;
+	/* border: 1px solid red; */
+}
+.discount {
+	font-size: 0.5rem;
+	color: gray;
+	text-decoration: line-through;
+}
+.main-button-div {
+	/* margin: auto; */
+	/* border: 1px solid red; */
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.main-container-button {
+	width: 30%;
+	padding: 10px 0px;
+	border: 1px solid #e89f71;
+	color: #e89f71;
+	background-color: white;
+	font-weight: 800;
+}
+.room-inspiration {
+	margin-top: 30px;
+	width: 100%;
+	padding: 0px 10px;
+}
+.room-inspiration-left {
+	width: 30%;
+	margin-left: 20px;
+}
+.heading {
+	text-align: left;
+}
+.main-container-button-alt {
+	background-color: #e89f71;
+	color: white;
+	border: none;
+	width: 70%;
+	padding: 10px 10px;
+	margin-top: 10px;
+}
+.room-inspiration-right {
+	width: 60%;
+}
+.inspiration-1 img {
+	width: 80%;
+}
+.content {
+	font-size: 0.8rem;
+}
+.tips-tricks {
+	margin-top: 30px;
+	width: 95%;
+	/* border: 1px solid red; */
+}
+.tip-tricks-center {
+	width: 85%;
+	margin: auto;
+	float: left;
+}
+.tip-tricks-center img {
+	width: 80%;
+	margin-left: 11%;
+	box-shadow: 5px 5px 5px gray;
+}
+.tips-tricks .indicator {
+	text-align: center;
+}
+.indicator img {
+	width: 20%;
+	margin: auto;
+}
+.carousel-right-arrow-alt,
+.carousel-left-arrow-alt {
+	margin: 0;
+	width: 7%;
+}
+.share-setup {
+	margin-top: 30px;
+	width: 100%;
+	border-bottom: 2px solid #cbcbcb;
+}
+.share-text {
+	text-align: center;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+/* Footer CSS */
+footer {
+	width: 90%;
+	margin: auto;
+	margin-top: 30px;
+	padding: 0px 20px 0px 20px;
+	/* border: 1px solid red; */
+}
+.footer-left {
+	width: 50%;
+	font-size: 0.8rem;
+	line-height: 1rem;
+}
+.footer-right {
+	/* border: 1px solid red; */
+	width: 40%;
+}
+.footer-title {
+	font-weight: 800;
+}
+.textfield input {
+	margin-top: 10px;
+	border: none;
+	background-color: #f4f5f7;
+	color: gray;
+	width: 80%;
+}
+.plane-icon {
+	background-color: #e89f71;
+	width: 23%;
+	text-align: center;
+	padding-top: 5px;
+}
+.hover {
+	display: hidden;
+}

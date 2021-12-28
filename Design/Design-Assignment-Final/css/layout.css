@@ -1,0 +1,81 @@
+.clearfix {
+	content: "";
+	clear: both;
+	display: table;
+}
+/* Hidden elements for responsive */
+.nav-menu {
+	display: none;
+}
+.inner-peace {
+	display: none;
+}
+.arrow {
+	display: none;
+}
+.search {
+	display: none;
+}
+.header-carousel .indicator {
+	display: none;
+}
+.right-icons {
+	display: none;
+}
+.featured {
+	display: none;
+}
+.image-left {
+	display: none;
+}
+.image-right {
+	display: none;
+}
+.product-3 {
+	display: none;
+}
+.product-4 {
+	display: none;
+}
+.inspiration-2 {
+	display: none;
+}
+.inspiration-3 {
+	display: none;
+}
+.inspiration-indicator {
+	display: none;
+}
+.inspiration-right-arrow {
+	display: none;
+}
+.tip-tricks-left {
+	display: none;
+}
+.tip-tricks-right {
+	display: none;
+}
+.share-img-5 {
+	display: none;
+}
+.share-img-6 {
+	display: none;
+}
+.share-img-7 {
+	display: none;
+}
+.share-img-8 {
+	display: none;
+}
+.share-img-9 {
+	display: none;
+}
+.footer-menu {
+	display: none;
+}
+.footer-account {
+	display: none;
+}
+.footer-stay-connected {
+	display: none;
+}

@@ -1,0 +1,18 @@
+1. Create LoFi design (2hrs)
+    [x] LoFi for mobile (1hr)
+    [x] LoFi for tablet (1hr)
+    [x] LoFi for Desktop 
+2. HTML & CSS (13hrs)
+    [] Header (2hrs)
+        [] Navbar (1.5hr)
+            [] Carousel (1hr)
+            [] Articles (30 min)
+        [] Feature Div (30 min)
+    [] Main (10hrs) 
+        [] Product Div (2hrs)
+            [] Product Div: hover (30 mins)
+        [] Inspirational Room Carousel (2hrs)
+        [] Tips and Tricks Carousel (2hrs)
+        [] Share Setup Div (3hrs)
+    [] Footer (1hr)
+

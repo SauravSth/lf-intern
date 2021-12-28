@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Raleway:wght@300&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Raleway", sans-serif;
+}
+ul {
+	list-style-type: none;
+}
+ul li {
+	/* display: inline; */
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.float-r {
+	float: right;
+}
+.float-l {
+	float: left;
+}
