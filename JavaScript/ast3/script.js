@@ -1,7 +1,7 @@
 const viewport = document.getElementById('viewport')
 
-const boundaryWidth = 300
-const boundaryHeight = 300
+const boundaryWidth = 1200
+const boundaryHeight = 590
 const fps = 60
 
 function getRandomInt(min, max) {
@@ -9,7 +9,7 @@ function getRandomInt(min, max) {
 	max = Math.floor(max)
 	return Math.floor(Math.random() * (max - min) + min)
 }
-function ball() {
+function Ball() {
 	this.ball = document.createElement('div')
 	this.ball.classList.add('ball')
 	this.ball.style.width = '20px'
@@ -20,6 +20,7 @@ function ball() {
 
 	this.dx = 1
 	this.dy = 2
+	this.speed = 1
 
 	this.ball.style.top = this.y + 'px'
 	this.ball.style.top = this.x + 'px'
@@ -31,12 +32,12 @@ function ball() {
 
 	this.move = function () {
 		setInterval(() => {
-			this.x += this.speed * dx
-			this.y += this.speed * dy
+			this.x += this.speed * this.dx
+			this.y += this.speed * this.dy
 			this.ball.style.top = this.y + 'px'
 			this.ball.style.left = this.x + 'px'
 
-			this.ball.checkWallCollission()
+			this.checkWallCollission()
 		}, 1000 / fps)
 
 		// requestAnimationFrame(() => {
@@ -45,10 +46,10 @@ function ball() {
 	}
 	this.checkWallCollission = function () {
 		if (this.x > boundaryWidth) {
-			dx = -1
+			this.dx = -1
 		}
 		if (this.y > boundaryHeight) {
-			dy = -1
+			this.dy = -1
 		}
 		if (this.x < 0) {
 			this.dx = 1
@@ -65,13 +66,13 @@ function ball() {
 	}
 }
 
-const ballCount = 5
+const ballCount = 20
 const ballArray = []
 
 document.getElementById('btn').onclick = function () {
 	viewport.innerHTML = ''
-	for (let i = 0; i < 5; i++) {
-		const ball = new ball()
+	for (let i = 0; i < ballCount; i++) {
+		const ball = new Ball()
 		ballArray.push(ball)
 		ball.draw()
 		ball.move()
