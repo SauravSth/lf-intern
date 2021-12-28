@@ -1,0 +1,48 @@
+.clearfix {
+	content: "";
+	clear: both;
+	display: table;
+}
+.left-sidebar dd:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.header-left {
+	float: left;
+	margin-left: 30px;
+}
+.header-left img {
+	float: left;
+}
+.header-left input,
+button {
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+}
+
+.header-right {
+	float: right;
+}
+
+.header-name {
+	float: right;
+	font-size: 16px;
+	margin: 20px 30px 0 0;
+}
+
+.header-buttons {
+	float: right;
+	margin-right: 30px;
+}
+
+.left-sidebar {
+	float: left;
+}
+.hero {
+	content: "";
+	clear: both;
+	display: table;
+}
