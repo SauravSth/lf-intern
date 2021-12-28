@@ -18,8 +18,8 @@ function Ball() {
 	this.x = getRandomInt(0, boundaryWidth)
 	this.y = getRandomInt(0, boundaryHeight)
 
-	this.dx = 1
-	this.dy = 2
+	this.dx = getRamdomDirection()
+	this.dy = getRamdomDirection()
 	this.speed = 1
 
 	this.ball.style.top = this.y + 'px'
@@ -38,6 +38,7 @@ function Ball() {
 			this.ball.style.left = this.x + 'px'
 
 			this.checkWallCollission()
+			this.checkBallCollission()
 		}, 1000 / fps)
 
 		// requestAnimationFrame(() => {
@@ -46,13 +47,15 @@ function Ball() {
 	}
 	this.checkWallCollission = function () {
 		if (this.x > boundaryWidth) {
-			this.dx = -1
+			this.dx = -this.dx
+			this.x += this.dx
 		}
 		if (this.y > boundaryHeight) {
-			this.dy = -1
+			this.dy = -this.dy
+			this.y += this.dy
 		}
 		if (this.x < 0) {
-			this.dx = 1
+			this.dx = -this.dx
 		}
 		if (this.y < 0) {
 			this.dy = 1
@@ -61,12 +64,27 @@ function Ball() {
 	this.checkBallCollission = function () {
 		ballArray.forEach((ball) => {
 			if (ball !== this.ball) {
+				let collision = {
+					x: this.x - ball.x,
+					y: this.y - ball.y,
+				}
+				let distance = Math.sqrt(
+					Math.pow(collision.x, 2) + Math.pow(collision.y, 2)
+				)
+				let length = 20
+
+				if (distance < this.radius + ball.radius) {
+					this.dx = -this.dx
+					this.dy = -this.dy
+					this.x += (length - distance) * this.dx
+					this.y += (length - distance) * this.dy
+				}
 			}
 		})
 	}
 }
 
-const ballCount = 20
+const ballCount = 1000
 const ballArray = []
 
 document.getElementById('btn').onclick = function () {
@@ -77,4 +95,8 @@ document.getElementById('btn').onclick = function () {
 		ball.draw()
 		ball.move()
 	}
+}
+
+function getRamdomDirection() {
+	return Math.random() > 0.5 ? 1 : -1
 }
