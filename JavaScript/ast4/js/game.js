@@ -15,7 +15,6 @@ class Opponent {
 	constructor(y) {
 		this.x = getRandomElement(xPosArray)
 		this.y = y
-		this.prevY = this.y
 		this.speed = speed
 	}
 

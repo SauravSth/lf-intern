@@ -34,7 +34,6 @@ startBtn.addEventListener('click', () => {
 
 restartBtn.addEventListener('click', () => {
 	inactive = false
-	speed = 10
 	score = 0
 	playerCarX = 280
 	gameScore.innerText = score
