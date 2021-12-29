@@ -19,7 +19,7 @@ class Opponent {
 	}
 
 	detectCollision = () => {
-		if (this.x === playerCarX && Math.abs(playerCarY - this.y) <= 179) {
+		if (this.x === playerCarX && Math.abs(playerCarY - this.y) <= 150) {
 			gameOver()
 			inactive = true
 
