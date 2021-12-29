@@ -4,12 +4,9 @@ const c = canvas.getContext('2d')
 canvas.height = 798
 canvas.width = 800
 
-/**
- * Game Constants
- */
 let score = 0
 let xPosArray = [30, 280, 530]
-let speed = 5
+let speed = 10
 let inactive = true
 let playerCarX = 280
 let playerCarY = 600
@@ -44,10 +41,6 @@ class Opponent {
 					this.x = getRandomElement(xPosArray)
 					score++
 					gameScore.innerText = score
-					// if (speed < 50) {
-					// 	speed += 0.1
-					// 	this.speed = speed / 2
-					// }
 				}
 				this.detectCollision()
 
@@ -106,9 +99,9 @@ function drawRoadAndPlayer() {
 }
 
 document.addEventListener('keydown', (event) => {
-	if (event.code === 'ArrowLeft' && playerCarX > 60) playerCarX -= 250
+	if (event.code === 'ArrowLeft' && playerCarX > 30) playerCarX -= 250
 
-	if (event.code === 'ArrowRight' && playerCarX < 760) playerCarX += 250
+	if (event.code === 'ArrowRight' && playerCarX < 530) playerCarX += 250
 })
 
 function getRandomElement(arr) {
