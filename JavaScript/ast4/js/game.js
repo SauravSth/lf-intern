@@ -8,7 +8,7 @@ canvas.width = 800
  * Game Constants
  */
 let score = 0
-let xPosArray = [30, 280, 550]
+let xPosArray = [30, 280, 530]
 let speed = 5
 let inactive = true
 let playerCarX = 280
