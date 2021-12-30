@@ -1,5 +1,6 @@
 body {
 	display: flex;
+	justify-content: center;
 }
 
 .game-container {
@@ -16,7 +17,7 @@ body {
 	position: absolute;
 }
 .ground {
-	background: url(../images/ground.png);
+	background: url('../images/ground.png');
 	width: 500px;
 	height: 150px;
 	position: absolute;
