@@ -1,0 +1,20 @@
+#header > div {
+	padding: 20px 0 0 20px;
+}
+.title {
+	font-size: 2rem;
+	font-weight: 900;
+}
+#main-container {
+	background-color: black;
+	display: none;
+	color: white;
+	height: 100vh;
+}
+#body {
+	position: relative;
+	margin: 0 auto;
+}
+#end {
+	display: none;
+}

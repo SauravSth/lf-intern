@@ -1,0 +1,14 @@
+Time Management 
+
+Create LoFi 
+Create the frontend
+    Create the start page
+    Create the game page   
+    Create the end/restart page
+Create script for 
+    Grid creation
+    Starter Discs 
+Create script for 
+    Available moves check
+    Doing the available moves 
+Adding styling for the different sections 
