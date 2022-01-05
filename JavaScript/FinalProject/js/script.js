@@ -5,10 +5,12 @@ const mainContainer = document.getElementById('main-container')
 const mainBody = document.getElementById('body')
 const discLayer = document.getElementById('discLayer')
 
+// Declare variables
 let gap = 3
 let cellWidth = 70
 let turn = 1
 
+// Initial status of discs
 let discs = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
@@ -20,6 +22,7 @@ let discs = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
+// Event listener for starting game of Player vs Player
 startVsPlayerBtn.addEventListener('click', () => {
 	mainContainer.style.display = 'block'
 	startDiv.style.display = 'none'
@@ -30,6 +33,7 @@ startVsPlayerBtn.addEventListener('click', () => {
 	drawDiscs()
 })
 
+// Draw background squares
 function drawGreenSquares() {
 	for (let row = 0; row < 8; row++) {
 		for (let column = 0; column < 8; column++) {
@@ -50,13 +54,63 @@ function drawGreenSquares() {
 	}
 }
 
+// Check if square was clicked and if the clicked square is valid
 function clickedSquare(row, column) {
-	discs[row][column] = turn
-	if (turn == 1) turn = 2
-	else turn = 1
-	drawDiscs()
+	if (discs[row][column] != 0) {
+		return
+	}
+	if (canClickSpot(row, column) == true) {
+		let affectedDiscs = getAffectedDiscs(row, column)
+
+		flipDiscs(affectedDiscs)
+		discs[row][column] = turn
+		if (turn == 1) turn = 2
+		else turn = 1
+		drawDiscs()
+	}
 }
 
+// Check if the clicked square is a valid move or not
+function canClickSpot(row, column) {
+	let affectedDiscs = getAffectedDiscs(row, column)
+	if (affectedDiscs.length == 0) return false
+	else return true
+}
+
+// Get all discs that might be affected by a certain move
+function getAffectedDiscs(row, column) {
+	let affectedDiscs = []
+	let couldBeAffected = []
+	let columnIterator = column
+	while (columnIterator < 7) {
+		columnIterator += 1
+		let valueAtSpot = discs[row][columnIterator]
+		if (valueAtSpot == 0 || valueAtSpot == turn) {
+			if (valueAtSpot == turn) {
+				affectedDiscs = affectedDiscs.concat(couldBeAffected)
+			}
+			break
+		} else {
+			let discLocation = { row: row, column: columnIterator }
+			couldBeAffected.push(discLocation)
+		}
+	}
+	return affectedDiscs
+}
+
+// Flip discs after a valid move
+function flipDiscs(affectedDiscs) {
+	for (let i = 0; i < affectedDiscs.length; i++) {
+		let spot = affectedDiscs[i]
+		if (discs[spot.row][spot.column] == 1) {
+			discs[spot.row][spot.column] = 2
+		} else {
+			discs[spot.row][spot.column] = 1
+		}
+	}
+}
+
+// Draw initial discs
 function drawDiscs() {
 	discLayer.innerHTML = ''
 	for (let row = 0; row < 8; row++) {
