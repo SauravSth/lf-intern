@@ -4,11 +4,13 @@ const startVsComputerBtn = document.getElementById('vs-AI')
 const mainContainer = document.getElementById('main-container')
 const mainBody = document.getElementById('body')
 const discLayer = document.getElementById('discLayer')
+const score = document.getElementById('score')
 
 // Declare variables
 let gap = 3
 let cellWidth = 70
 let turn = 1
+let gameOver = false
 
 // Initial status of discs
 let discs = [
@@ -56,30 +58,63 @@ function drawGreenSquares() {
 
 // Check if square was clicked and if the clicked square is valid
 function clickedSquare(row, column) {
+	if (gameOver) return
 	if (discs[row][column] != 0) {
 		return
 	}
-	if (canClickSpot(row, column) == true) {
-		let affectedDiscs = getAffectedDiscs(row, column)
+	if (canClickSpot(turn, row, column) == true) {
+		let affectedDiscs = getAffectedDiscs(turn, row, column)
 
 		flipDiscs(affectedDiscs)
 		discs[row][column] = turn
-		if (turn == 1) turn = 2
-		else turn = 1
+		if (turn == 1 && canMove(2)) turn = 2
+		else if (turn == 2 && canMove(1)) turn = 1
+
+		if (canMove(1) == false && canMove(2) == false) {
+			alert('Game Over')
+			gameOver = true
+		}
+
 		drawDiscs()
+		drawScore()
 	}
 }
 
+function canMove(id) {
+	for (let row = 0; row < 8; row++) {
+		for (let column = 0; column < 8; column++) {
+			if (canClickSpot(id, row, column)) {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+function drawScore() {
+	let ones = 0
+	let twos = 0
+
+	for (let row = 0; row < 8; row++) {
+		for (let column = 0; column < 8; column++) {
+			let value = discs[row][column]
+			if (value == 1) ones += 1
+			else if (value == 2) twos += 1
+		}
+	}
+	score.textContent = `Black: ${ones} White: ${twos}`
+}
+
 // Check if the clicked square is a valid move or not
-function canClickSpot(row, column) {
-	let affectedDiscs = getAffectedDiscs(row, column)
+function canClickSpot(id, row, column) {
+	let affectedDiscs = getAffectedDiscs(id, row, column)
 	if (affectedDiscs.length == 0) return false
 	else return true
 }
 
 // Get all discs that might be affected by a certain move
 
-function getAffectedDiscs(row, column) {
+function getAffectedDiscs(id, row, column) {
 	let affectedDiscs = []
 	let couldBeAffected = []
 	let columnIterator = column
@@ -90,8 +125,8 @@ function getAffectedDiscs(row, column) {
 	while (columnIterator < 7) {
 		columnIterator += 1
 		let valueAtSpot = discs[row][columnIterator]
-		if (valueAtSpot == 0 || valueAtSpot == turn) {
-			if (valueAtSpot == turn) {
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
 				affectedDiscs = affectedDiscs.concat(couldBeAffected)
 			}
 			break
@@ -108,8 +143,8 @@ function getAffectedDiscs(row, column) {
 	while (columnIterator > 0) {
 		columnIterator -= 1
 		let valueAtSpot = discs[row][columnIterator]
-		if (valueAtSpot == 0 || valueAtSpot == turn) {
-			if (valueAtSpot == turn) {
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
 				affectedDiscs = affectedDiscs.concat(couldBeAffected)
 			}
 			break
@@ -125,8 +160,8 @@ function getAffectedDiscs(row, column) {
 	while (rowIterator > 0) {
 		rowIterator -= 1
 		let valueAtSpot = discs[rowIterator][column]
-		if (valueAtSpot == 0 || valueAtSpot == turn) {
-			if (valueAtSpot == turn) {
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
 				affectedDiscs = affectedDiscs.concat(couldBeAffected)
 			}
 			break
@@ -142,13 +177,89 @@ function getAffectedDiscs(row, column) {
 	while (rowIterator < 7) {
 		rowIterator += 1
 		let valueAtSpot = discs[rowIterator][column]
-		if (valueAtSpot == 0 || valueAtSpot == turn) {
-			if (valueAtSpot == turn) {
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
 				affectedDiscs = affectedDiscs.concat(couldBeAffected)
 			}
 			break
 		} else {
 			let discLocation = { row: rowIterator, column: column }
+			couldBeAffected.push(discLocation)
+		}
+	}
+
+	// Check if disc down left needs to be flipped
+	couldBeAffected = []
+	rowIterator = row
+	columnIterator = column
+	while (rowIterator < 7 && columnIterator < 7) {
+		rowIterator += 1
+		columnIterator += 1
+		let valueAtSpot = discs[rowIterator][columnIterator]
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
+				affectedDiscs = affectedDiscs.concat(couldBeAffected)
+			}
+			break
+		} else {
+			let discLocation = { row: rowIterator, column: columnIterator }
+			couldBeAffected.push(discLocation)
+		}
+	}
+
+	// Check if disc down right needs to be flipped
+	couldBeAffected = []
+	rowIterator = row
+	columnIterator = column
+	while (rowIterator < 7 && columnIterator > 0) {
+		rowIterator += 1
+		columnIterator -= 1
+		let valueAtSpot = discs[rowIterator][columnIterator]
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
+				affectedDiscs = affectedDiscs.concat(couldBeAffected)
+			}
+			break
+		} else {
+			let discLocation = { row: rowIterator, column: columnIterator }
+			couldBeAffected.push(discLocation)
+		}
+	}
+
+	// Check if disc up left needs to be flipped
+	couldBeAffected = []
+	rowIterator = row
+	columnIterator = column
+	while (rowIterator > 0 && columnIterator > 0) {
+		rowIterator -= 1
+		columnIterator -= 1
+		let valueAtSpot = discs[rowIterator][columnIterator]
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
+				affectedDiscs = affectedDiscs.concat(couldBeAffected)
+			}
+			break
+		} else {
+			let discLocation = { row: rowIterator, column: columnIterator }
+			couldBeAffected.push(discLocation)
+		}
+	}
+
+	// Check if disc up right needs to be flipped
+	couldBeAffected = []
+	rowIterator = row
+	columnIterator = column
+	while (rowIterator > 0 && columnIterator < 7) {
+		rowIterator -= 1
+		columnIterator += 1
+		let valueAtSpot = discs[rowIterator][columnIterator]
+		if (valueAtSpot == 0 || valueAtSpot == id) {
+			if (valueAtSpot == id) {
+				affectedDiscs = affectedDiscs.concat(couldBeAffected)
+			}
+			break
+		} else {
+			let discLocation = { row: rowIterator, column: columnIterator }
 			couldBeAffected.push(discLocation)
 		}
 	}
