@@ -34,8 +34,7 @@ startVsPlayerBtn.addEventListener('click', () => {
 
 // Restart button event listener
 restartBtn.addEventListener('click', () => {
-	window.location.href =
-		'http://127.0.0.1:5500/Internship/JavaScript/FinalProject/index.html'
+	window.location.href = './index.html'
 })
 
 // Check if square was clicked and if the clicked square is valid
