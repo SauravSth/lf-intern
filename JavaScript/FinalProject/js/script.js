@@ -1,11 +1,3 @@
-const startDiv = document.getElementById('start')
-const startVsPlayerBtn = document.getElementById('vs-player')
-const startVsComputerBtn = document.getElementById('vs-AI')
-const mainContainer = document.getElementById('main-container')
-const mainBody = document.getElementById('body')
-const discLayer = document.getElementById('discLayer')
-const score = document.getElementById('score')
-
 // Declare variables
 let gap = 3
 let cellWidth = 70
@@ -17,15 +9,14 @@ let discs = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 1, 1, 0, 0, 0],
 	[0, 0, 0, 2, 1, 0, 0, 0],
-	[0, 0, 0, 1, 2, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-// Event listener for starting game of Player vs Player
-startVsPlayerBtn.addEventListener('click', () => {
+function init() {
 	mainContainer.style.display = 'block'
 	startDiv.style.display = 'none'
 	mainBody.style.width = cellWidth * 8 + gap * 9 + 'px'
@@ -33,6 +24,17 @@ startVsPlayerBtn.addEventListener('click', () => {
 
 	drawGreenSquares()
 	drawDiscs()
+	drawCanMoveLayer()
+}
+// Event listener for starting game of Player vs Player
+startVsPlayerBtn.addEventListener('click', () => {
+	init()
+})
+
+// Restart button event listener
+restartBtn.addEventListener('click', () => {
+	window.location.href =
+		'http://127.0.0.1:5500/Internship/JavaScript/FinalProject/index.html'
 })
 
 // Draw background squares
@@ -58,7 +60,12 @@ function drawGreenSquares() {
 
 // Check if square was clicked and if the clicked square is valid
 function clickedSquare(row, column) {
-	if (gameOver) return
+	if (gameOver) {
+		mainContainer.style.display = 'none'
+		mainBody.style.display = 'none'
+		endScreen.style.display = 'block'
+		return
+	}
 	if (discs[row][column] != 0) {
 		return
 	}
@@ -71,11 +78,12 @@ function clickedSquare(row, column) {
 		else if (turn == 2 && canMove(1)) turn = 1
 
 		if (canMove(1) == false && canMove(2) == false) {
-			alert('Game Over')
+			console.log('GameOver')
 			gameOver = true
 		}
 
 		drawDiscs()
+		drawCanMoveLayer()
 		drawScore()
 	}
 }
@@ -103,6 +111,7 @@ function drawScore() {
 		}
 	}
 	score.textContent = `Black: ${ones} White: ${twos}`
+	finalScore.textContent = `Black: ${ones} White: ${twos}`
 }
 
 // Check if the clicked square is a valid move or not
@@ -304,6 +313,39 @@ function drawDiscs() {
 				}
 
 				discLayer.appendChild(disc)
+			}
+		}
+	}
+}
+
+// Draw canMoveLayer
+function drawCanMoveLayer() {
+	canMoveLayer.innerHTML = ''
+	for (let row = 0; row < 8; row++) {
+		for (let column = 0; column < 8; column++) {
+			let value = discs[row][column]
+			if (value == 0 && canClickSpot(turn, row, column)) {
+				let discOutline = document.createElement('div')
+				discOutline.style.position = 'absolute'
+				discOutline.style.width = cellWidth - 5 + 'px'
+				discOutline.style.height = cellWidth - 5 + 'px'
+				discOutline.style.borderRadius = '50%'
+				discOutline.style.left =
+					(cellWidth + gap) * column + gap + 2 + 'px'
+				discOutline.style.top = (cellWidth + gap) * row + gap + 2 + 'px'
+				discOutline.style.zIndex = 1
+				discOutline.setAttribute(
+					'onClick',
+					`clickedSquare(${row}, ${column})`
+				)
+
+				if (turn == 1) {
+					discOutline.style.border = '2px solid black'
+				}
+				if (turn == 2) {
+					discOutline.style.border = '2px solid white'
+				}
+				canMoveLayer.appendChild(discOutline)
 			}
 		}
 	}
