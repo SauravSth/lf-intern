@@ -1,3 +1,6 @@
+body {
+	background-color: green;
+}
 #header > div {
 	padding: 20px 0 0 20px;
 }
@@ -21,4 +24,37 @@
 }
 #end {
 	display: none;
+}
+#start {
+	border: 1px solid black;
+}
+#logo {
+	margin-top: 20%;
+	width: auto;
+	height: 200px;
+	background: url('../images/logo.png') center no-repeat;
+	background-size: contain;
+}
+button {
+	border: none;
+	padding: 1.5rem 2rem;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	display: block;
+	width: 30%;
+	margin: auto;
+	margin-top: 10px;
+	font-size: 1rem;
+}
+#end {
+	width: 100%;
+	border: 1px solid red;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+#final-score {
+	/* border: 1px solid red; */
+	/* margin-top: 20px; */
+	color: white;
+	font-size: 1.5rem;
 }
