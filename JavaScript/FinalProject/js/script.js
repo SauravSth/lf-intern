@@ -3,6 +3,7 @@ let gap = 3
 let cellWidth = 70
 let turn = 1
 let gameOver = false
+let result
 
 // Initial status of discs
 // Black discs are denoted by 1 and White discs are denoted by 2

@@ -31,7 +31,10 @@ function drawScore() {
 		}
 	}
 	score.textContent = `Black: ${ones} White: ${twos}`
-	finalScore.textContent = `Black: ${ones} White: ${twos}`
+	if (ones > twos) result = 'Black Wins'
+	else if (twos > ones) result = 'White Wins'
+	else result = 'Draw'
+	finalScore.innerHTML = `${result} <br>Black: ${ones} White: ${twos}`
 }
 
 // Draw initial discs
