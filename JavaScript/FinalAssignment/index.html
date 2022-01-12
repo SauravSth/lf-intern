@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Othello</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="info">
+				<h1>Othello</h1>
+				<button id="start">Start game</button>
+				<form id="no-of-players">
+					<span>Players:</span>
+					<input
+						checked
+						type="radio"
+						id="single"
+						name="player"
+						value="single"
+					/>
+					<label for="single">One</label>
+					<input
+						type="radio"
+						id="multi"
+						name="player"
+						value="multi"
+					/>
+					<label for="multi">Two</label>
+				</form>
+				<div class="turn-indicator-icon">
+					<div>Turn:</div>
+					<div class="indicator-circle">
+						<!-- created in js -->
+					</div>
+				</div>
+				<div class="turn-indicator">
+					<div>Black: <span class="score"></span></div>
+					<div>White: <span class="score"></span></div>
+				</div>
+			</div>
+			<div class="board"></div>
+		</div>
+
+		<script src="./js/script.js"></script>
+		<script src="./js/game.js"></script>
+		<script src="./js/listener.js"></script>
+		<script src="./js/startGame.js"></script>
+	</body>
+</html>
