@@ -9,7 +9,7 @@ const startGame = () => {
 		disc.innerHTML = blankHtml
 	})
 
-	// Initial bricks
+	// Initial discs
 	discs[27].innerHTML = createBrickHtml('white')
 	discs[28].innerHTML = createBrickHtml('black')
 	discs[35].innerHTML = createBrickHtml('black')

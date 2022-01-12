@@ -60,10 +60,10 @@ const endGame = (discs) => {
 	const blackCount = getCount(discs, 'black')
 	const whiteCount = getCount(discs, 'white')
 	if (blackCount === whiteCount) {
-		alert('Draw')
+		console.log('Draw')
 	}
 	const winner = blackCount > whiteCount ? 'Black' : 'White'
-	alert(winner + ' wins!')
+	console.log(winner + ' wins!')
 	startGame()
 }
 
