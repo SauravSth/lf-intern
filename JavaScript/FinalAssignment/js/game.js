@@ -1,3 +1,10 @@
+/**
+ *
+ * @param {*} discs Check if position relative to discs are open
+ * @param {*} board
+ * @param {*} color
+ * @returns The positions that can have a disc placed on it
+ */
 const getAvailablePositions = (discs, board, color) => {
 	const positions = []
 	discs.forEach((disc, index) => {
@@ -29,7 +36,11 @@ const getAvailablePositions = (discs, board, color) => {
 	})
 	return positions
 }
-
+/**
+ *
+ * @param {*} discs
+ * @returns If the disc placed will cause other discs to flip
+ */
 const willCauseFlipsCount = (discs) => {
 	if (discs.length < 3) {
 		return 0
@@ -63,6 +74,14 @@ const willCauseFlipsCount = (discs) => {
 	return result
 }
 
+/**
+ *
+ * @param {*} pos
+ * @param {*} dir
+ * @param {*} _board
+ * @param {*} color
+ * @returns The discs that will get flipped if a disc is placed in pos
+ */
 const getDiscsInDirection = (pos, dir, _board, color) => {
 	const board = _board.map(function (row) {
 		return row.slice()
@@ -71,6 +90,7 @@ const getDiscsInDirection = (pos, dir, _board, color) => {
 	let x = pos.x
 	let y = pos.y
 	board[x][y] = color
+	// Check directions to flip discs
 	switch (dir) {
 		case 'up':
 			for (y; y >= 0; y--) {
@@ -149,7 +169,12 @@ const updateValidPositions = (discs, board, color) => {
 		disc.classList.add('valid')
 	})
 }
-
+/**
+ *
+ * @param {*} board
+ * @param {*} color
+ * @param {*} pos
+ */
 const flipFromPos = (board, color, pos) => {
 	const opposingColor = color === 'black' ? 'white' : 'black'
 	let x = pos.x

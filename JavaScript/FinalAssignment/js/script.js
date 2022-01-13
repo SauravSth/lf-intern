@@ -1,5 +1,8 @@
 // Functions
-
+/**
+ * @param {*} color
+ * @returns div with style added of color
+ */
 const createBrickHtml = (color) => {
 	return `<div class="flip-circle ${color}">
             <div class="flip-circle-inner">
@@ -13,6 +16,12 @@ const createBrickHtml = (color) => {
           </div>`
 }
 
+/**
+ *
+ * @param {*} discs
+ * @param {*} color
+ * @returns The number of discs with specified color
+ */
 const getCount = (discs, color) => {
 	return discs.filter((disc) => disc.children[0].classList.contains(color))
 		.length
@@ -44,6 +53,16 @@ const updateDiscsFromBoard = (discs, board) => {
 	})
 }
 
+/**
+ *
+ * @param {*} board . The board where discs are drawn
+ * @param {*} discs
+ * @param {*} positions . Positions of the individual discs
+ * @param {*} target
+ * @param {*} player
+ * @param {*} x . X cordinate
+ * @param {*} y . Y cordinate
+ */
 const placeBrick = (board, discs, positions, target, player, x, y) => {
 	// Place brick
 	target.innerHTML = createBrickHtml(player)
@@ -69,6 +88,7 @@ const endGame = (discs) => {
 	winScreen.innerHTML = `<p style='margin-top: 40%;'>${winner}<br> Wins!</p>`
 }
 
+// Add empty discs to all 64 spaces of the board
 const addDiscs = (board) => {
 	let html = ''
 	for (let i = 0; i < 64; i++) {

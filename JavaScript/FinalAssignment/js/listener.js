@@ -1,4 +1,4 @@
-// Constants
+// Directions of game
 const directions = [
 	'up',
 	'upright',
@@ -10,7 +10,7 @@ const directions = [
 	'upleft',
 ]
 const blankHtml = `<div class="blank"></div>`
-// Variables
+
 let noOfPlayers = 1
 
 // Elements
