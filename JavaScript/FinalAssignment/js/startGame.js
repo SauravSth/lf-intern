@@ -1,5 +1,7 @@
 // Start game function
 const startGame = () => {
+	discsWrapper.style.display = 'flex'
+	winScreen.style.display = 'none'
 	discsWrapper.innerHTML = ''
 	addDiscs(discsWrapper)
 	const discs = [...document.querySelectorAll('.board .disc')]

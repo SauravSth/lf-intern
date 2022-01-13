@@ -64,7 +64,9 @@ const endGame = (discs) => {
 	}
 	const winner = blackCount > whiteCount ? 'Black' : 'White'
 	console.log(winner + ' wins!')
-	startGame()
+	discsWrapper.style.display = 'none'
+	winScreen.style.display = 'block'
+	winScreen.innerHTML = `<p style='margin-top: 40%;'>${winner}<br> Wins!</p>`
 }
 
 const addDiscs = (board) => {

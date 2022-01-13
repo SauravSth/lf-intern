@@ -21,6 +21,7 @@ const playerIndicatorWrapper = document.querySelector('.indicator-circle')
 playerIndicatorWrapper.innerHTML = createBrickHtml('black')
 const playerIndicator = document.querySelector('.indicator-circle .flip-circle')
 const noOfPlayersForm = document.querySelector('#no-of-players')
+const winScreen = document.getElementById('winscreen')
 
 // Event listeners
 noOfPlayersForm.addEventListener('change', (e) => {

@@ -44,6 +44,11 @@ button {
 	max-width: 800px;
 	margin-top: 30px;
 }
+#winscreen {
+	height: 30px;
+	width: inherit;
+	display: none;
+}
 .turn-indicator,
 .turn-indicator-icon {
 	display: flex;
@@ -128,7 +133,11 @@ button {
 	padding: 5rem 0;
 	text-align: center;
 }
-
+#winscreen {
+	font-size: 4rem;
+	width: 45%;
+	height: 80%;
+}
 .board {
 	width: 90%;
 	display: flex;
